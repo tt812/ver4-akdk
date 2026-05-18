@@ -46,12 +46,9 @@
     trackpoint_listener: trackpoint_listener {
         compatible = "zmk,input-listener";
         device = <&trackpoint>;
-        input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_temp_layer 5 400
-            &zip_xy_scaler 4 7
-        >;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
     };
+
 
     split_inputs {
         #address-cells = <1>;
@@ -63,32 +60,18 @@
         };
     };
 
+
     trackball_split_listener: trackball_split_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
         status = "okay";
-     
-         /* normal cursor movement + auto mouse layer (layer 5) */
-        input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_temp_layer 5 400
-            &zip_xy_scaler 4 7
-        >;
-
-        /* scroll mode when layer 6 is active */
-        scroller {
-            layers = <6>;
-
-            input-processors = <
-                &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-                &zip_xy_to_scroll_mapper
-                &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)
-                &zip_scroll_scaler 2 10
-            >;
-
-            process-next;
-        };
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
+};
+
+&physical_layout0 {
+    kscan = <&kscan0>;
+    transform = <&default_transform>;
 };
 
   &pinctrl {
@@ -124,4 +107,6 @@
       irq-gpios = <&gpio0 13 GPIO_PULL_UP>;
     };
   };
+  
+
   
