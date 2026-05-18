@@ -12,7 +12,5 @@ manifest:
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
-    - name: zmk-driver-lpps
-      remote: sekigon-gonnoc
   self:
     path: config
