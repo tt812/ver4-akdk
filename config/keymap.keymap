@@ -28,6 +28,73 @@
 #define JP_HANZEN       GRAVE             // 半角/全角
 
 / {
+    macros {
+        sel_win_0: sel_win_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &to 0>;
+        };
+
+        sel_win_1: sel_win_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &to 0>;
+        };
+
+        sel_win_2: sel_win_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2 &to 0>;
+        };
+
+        sel_ipad_3: sel_ipad_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3 &to 7>;
+        };
+
+        sel_ipad_4: sel_ipad_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 4 &to 7>;
+        };
+
+        splitview_l: splitview_l {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp GLOBE>,
+                <&macro_wait_time 50>,
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap_time 50>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>,
+                <&macro_release>,
+                <&kp GLOBE>;
+
+            label = "SPLITVIEW_L";
+        };
+
+        //
+    }; //
+    behaviors {
+        // タップでマウスボタン、長押しでレイヤー移動するカスタム設定
+
+        lt_mouse: lt_mouse {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";    // タップ操作を優先する設定
+            tapping-term-ms = <200>;     // 200ミリ秒以上の長押しでレイヤー切り替え
+            bindings = <&mo>, <&mkp>;
+
+            // 1つ目の引数にレイヤー(&mo)、2つ目にマウスボタン(&mkp)
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
