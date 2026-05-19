@@ -100,55 +100,55 @@
 
         layer_0 {
             bindings = <
-&kp Q      &kp W  &kp E  &kp R  &kp T        &none       &kp P                 &kp O       &kp I      &kp U     &kp Y     &kp DEL
-&kp A      &kp S  &kp D  &kp F  &kp G        &none       &mt LEFT_SHIFT ENTER  &kp L       &kp K      &kp J     &kp H
-&kp Z      &kp X  &kp C  &kp V  &kp B        &none       &none                 &kp PERIOD  &kp COMMA  &kp M     &kp N
-&kp LCTRL                       &lt 1 SPACE  &lt 2 INT5  &mt RCTRL ESC         &none       &none      &mkp MB2  &mkp MB1  &none
+&kp Q      &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)         &kp P                 &kp O       &kp I      &kp U     &kp Y     &kp DEL
+&kp A      &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS       &mt LEFT_SHIFT ENTER  &kp L       &kp K      &kp J     &kp H
+&kp Z      &kp X  &kp C  &kp V  &kp B        &mt LEFT_WIN LG(T)  &none                 &kp PERIOD  &kp COMMA  &kp M     &kp N
+&kp LCTRL                       &lt 1 SPACE  &lt 2 INT5          &mt RCTRL ESC         &none       &none      &mkp MB2  &mkp MB1  &none
             >;
         };
 
         layer_1 {
             bindings = <
-&kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp HOME   &none     &kp MINUS             &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
-&lt 4 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp END    &none     &mt LEFT_SHIFT ENTER  &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
-&kp LC(Z)    &kp LC(X)        &kp LC(C)  &kp LC(V)    &kp LC(Y)  &none     &none                 &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
-&kp LCTRL                                             &none      &kp INT5  &mt RCTRL ESC         &kp KP_PLUS      &kp EQUAL        &kp DOT          &kp KP_NUMBER_0  &kp BACKSPACE
+&kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp HOME     &kp MINUS             &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
+&lt 4 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp PAGE_DOWN  &kp END      &mt LEFT_SHIFT ENTER  &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
+&kp LC(Z)    &kp LC(X)        &kp LC(C)  &kp LC(V)    &kp LC(Y)      &kp LA(TAB)  &none                 &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
+&kp LCTRL                                             &none          &kp INT5     &mt RCTRL ESC         &kp KP_PLUS      &kp EQUAL        &kp DOT          &kp KP_NUMBER_0  &kp BACKSPACE
             >;
         };
 
         layer_2 {
             bindings = <
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none                       &none  &none  &none  &none  &none  &none  &none  &none
+&kp EXCLAMATION  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp AMPERSAND  &kp PIPE  &none  &none      &none          &none             &none          &kp DEL
+&kp F7           &kp F8    &kp F9      &kp F10      &kp F11        &kp F12   &none  &kp COLON  &kp SEMICOLON  &none             &none
+&kp F1           &kp F2    &kp F3      &kp F4       &kp F5         &kp F6    &none  &none      &kp SLASH      &kp GREATER_THAN  &kp LESS_THAN
+&none                                               &none          &none     &none  &none      &none          &none             &none          &kp BACKSPACE
             >;
         };
 
         layer_3 {
             bindings = <
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none                       &none  &none  &none  &none  &none  &none  &none  &none
+&kp LS(TAB)   &kp LG(D)     &kp LG(UP)    &none          &none         &none  &none  &none  &none  &none  &none  &none
+&kp TAB       &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &none         &none  &none  &none  &none  &none  &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4  &none  &none  &none  &none  &none  &none
+&none                                                    &none         &none  &none  &none  &none  &none  &none  &none
             >;
         };
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans                          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &msc SCRL_UP    &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans          &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans                                                   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         layer_5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans                          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans  &trans    &trans    &trans  &trans  &trans           &trans  &trans    &trans    &trans    &trans
+&kp LC(LS(B))  &mo 6   &mkp MB1  &mkp MB2  &trans  &trans  &mt LSHFT ENTER  &mo 6   &mkp MB1  &mkp MB2  &trans
+&trans         &trans  &trans    &trans    &trans  &trans  &trans           &trans  &trans    &trans    &trans
+&kp LCTRL                                  &trans  &trans  &trans           &trans  &trans    &mkp MB2  &mkp MB1  &trans
             >;
         };
 
