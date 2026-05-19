@@ -120,7 +120,6 @@
             bindings = <
 &kp EXCLAMATION  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp AMPERSAND  &kp JP_PIPE  &kp JP_TILDE              &kp JP_RPAREN     &kp JP_LPAREN  &kp JP_DQUOTE     &kp JP_QUOTE      &kp DEL
 &kp F7           &kp F8    &kp F9      &kp F10      &kp F11        &kp F12      &mt LSHIFT ENTER          &kp SINGLE_QUOTE  &kp SEMICOLON  &kp JP_RBRACKET   &kp JP_LBRACKET
-T
 &kp F1           &kp F2    &kp F3      &kp F4       &kp F5         &kp F6       &mt RSHIFT JP_UNDERSCORE  &kp JP_YEN        &kp SLASH      &kp GREATER_THAN  &kp LESS_THAN
 &none                                               &none          &none        &mt RCTRL ESC             &none             &none          &none             &none             &kp BACKSPACE
             >;
