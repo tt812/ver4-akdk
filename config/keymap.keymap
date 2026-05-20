@@ -103,7 +103,7 @@
 &kp Q      &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)         &kp P                   &kp O       &kp I             &kp U     &kp Y     &kp DEL
 &kp A      &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS       &mt LEFT_SHIFT ENTER    &kp L       &kp K             &kp J     &kp H
 &kp Z      &kp X  &kp C  &kp V  &kp B        &mt LEFT_WIN LG(T)  &mt RALT JP_UNDERSCORE  &kp PERIOD  &kp COMMA         &kp M     &kp N
-&kp LCTRL                       &lt 1 SPACE  &lt 2 INT5          &mt RCTRL ESC           &kp LG(S)   &mt RWIN AT_SIGN  &mkp MB2  &mkp MB1  &lt 3 BACKSPACE
+&kp LCTRL                       &lt 1 SPACE  &lt 2 INT5          &mt RCTRL ESC           &kp LG(S)   &mt RWIN JP_AT    &mkp MB2  &mkp MB1  &lt 3 BACKSPACE
             >;
         };
 
