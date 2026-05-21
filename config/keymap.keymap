@@ -102,7 +102,7 @@
             bindings = <
 &kp Q      &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)         &kp P                          &kp O            &kp I             &kp U     &kp Y     &kp DEL
 &kp A      &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS       &mt LEFT_SHIFT ENTER           &kp L            &kp K             &kp J     &kp H
-&kp Z      &kp X  &kp C  &kp V  &kp B        &mt LEFT_WIN LG(T)  &mt right_SHIFT JP_UNDERSCORE  &kp PERIOD       &kp COMMA         &kp M     &kp N
+&kp Z      &kp X  &kp C  &kp V  &kp B        &mt LEFT_WIN LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp PERIOD       &kp COMMA         &kp M     &kp N
 &kp LCTRL                       &lt 1 SPACE  &lt 2 INT5          &mt RCTRL ESC                  &mt RALT LG(S)   &mt RWIN JP_AT    &mkp MB2  &mkp MB1  &lt 3 BACKSPACE
             >;
         };
@@ -111,7 +111,7 @@
             bindings = <
 &kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp HOME              &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
 &lt 4 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp PAGE_DOWN  &kp END               &mt LEFT_SHIFT ENTER           &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
-&kp LC(Z)    &kp LC(X)        &kp LC(C)  &kp LC(V)    &kp LC(Y)      &mt LEFT_WIN LG(TAB)  &mt right_SHIFT JP_UNDERSCORE  &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
+&kp LC(Z)    &kp LC(X)        &kp LC(C)  &kp LC(V)    &kp LC(Y)      &mt LEFT_WIN LG(TAB)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
 &kp LCTRL                                             &none          &kp INT5              &mt RCTRL ESC                  &kp KP_PLUS      &kp JP_EQUAL     &kp DOT          &kp KP_NUMBER_0  &kp BACKSPACE
             >;
         };
@@ -120,7 +120,7 @@
             bindings = <
 &kp EXCLAMATION  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp JP_AMPERSAND  &kp JP_PIPE  &kp JP_TILDE                   &kp JP_RPAREN     &kp JP_LPAREN  &kp JP_DQUOTE     &kp JP_QUOTE     &kp DEL
 &kp F7           &kp F8    &kp F9      &kp F10      &kp F11           &kp F12      &mt LSHIFT ENTER               &kp SINGLE_QUOTE  &kp SEMICOLON  &kp JP_RBRACKET   &kp JP_LBRACKET
-&kp F1           &kp F2    &kp F3      &kp F4       &kp F5            &kp F6       &mt right_SHIFT JP_UNDERSCORE  &kp JP_YEN        &kp SLASH      &kp GREATER_THAN  &kp LESS_THAN
+&kp F1           &kp F2    &kp F3      &kp F4       &kp F5            &kp F6       &mt RIGHT_SHIFT JP_UNDERSCORE  &kp JP_YEN        &kp SLASH      &kp GREATER_THAN  &kp LESS_THAN
 &kp LCTRL                                           &none             &none        &mt RCTRL ESC                  &none             &none          &none             &none            &kp BACKSPACE
             >;
         };
@@ -129,7 +129,7 @@
             bindings = <
 &kp LS(TAB)   &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &none         &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
 &kp TAB       &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &bt BT_CLR    &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4  &none  &mt right_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4  &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
 &none                                                    &none         &none  &none                          &none                &none     &none               &none  &none
             >;
         };
