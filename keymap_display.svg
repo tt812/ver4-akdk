@@ -249,8 +249,7 @@ path.combo {
 </g>
 <g transform="translate(759, 175)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">_</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 64%">right SHIFT</tspan></text>
+<text x="0" y="0" class="key tap">Shift/_</text>
 </g>
 <g transform="translate(701, 147)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -465,8 +464,7 @@ path.combo {
 </g>
 <g transform="translate(759, 175)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">_</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 64%">right SHIFT</tspan></text>
+<text x="0" y="0" class="key tap">Shift/_</text>
 </g>
 <g transform="translate(701, 147)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -656,8 +654,7 @@ path.combo {
 </g>
 <g transform="translate(759, 175)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">_</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 64%">right SHIFT</tspan></text>
+<text x="0" y="0" class="key tap">Shift/_</text>
 </g>
 <g transform="translate(701, 147)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -843,8 +840,7 @@ path.combo {
 </g>
 <g transform="translate(759, 175)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">_</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 64%">right SHIFT</tspan></text>
+<text x="0" y="0" class="key tap">Shift/_</text>
 </g>
 <g transform="translate(701, 147)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
