@@ -121,7 +121,7 @@
       status = "okay";
       compatible = "lpps";
       reg = <0x57>;
-      irq-gpios = <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+      poll-interval = <10>; 
     };
   };
   
