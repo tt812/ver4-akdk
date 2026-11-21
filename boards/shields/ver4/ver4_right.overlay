@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 
@@ -63,11 +64,10 @@
         device = <&trackball_split>;
         status = "okay";
 
-         /* ボールを動かすとLayer 4（マウスレイヤー）に自動切り替え */
+        /* 感度・回転・オートマウスレイヤーはDYA Studio側で動的調整 */
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_temp_layer 4 400
-            &zip_xy_scaler 4 7
+            &mouse_runtime_input_processor
         >;
 
         /* Layer 5（スクロールレイヤー）がアクティブな時だけスクロール動作に切り替え */
@@ -78,7 +78,7 @@
                 &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
                 &zip_xy_to_scroll_mapper
                 &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)
-                &zip_scroll_scaler 2 10
+                &scroll_runtime_input_processor
             >;
         };
     };
@@ -122,5 +122,3 @@
         irq-gpios = <&gpio0 13 GPIO_PULL_UP>;
     };
 };
-
-  
