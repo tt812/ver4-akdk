@@ -29,36 +29,7 @@
 
 / {
     macros {
-        sel_win_0: sel_win_0 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &to 0>;
-        };
-
-        sel_win_1: sel_win_1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 0>;
-        };
-
-        sel_win_2: sel_win_2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2 &to 0>;
-        };
-
-        sel_ipad_3: sel_ipad_3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3 &to 7>;
-        };
-
-        sel_ipad_4: sel_ipad_4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 4 &to 7>;
-        };
-
+        // 将来的にiPadでGlobeキー代わり(CAPS)として使うためのマクロ
         splitview_l: splitview_l {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -74,22 +45,21 @@
     };
 
     behaviors {
-        // タップでマウスボタン、長押しでレイヤー移動するカスタム設定
-
         lt_mouse: lt_mouse {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";    // タップ操作を優先する設定
-            tapping-term-ms = <200>;     // 200ミリ秒以上の長押しでレイヤー切り替え
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
             bindings = <&mo>, <&mkp>;
-
-            // 1つ目の引数にレイヤー(&mo)、2つ目にマウスボタン(&mkp)
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
+        // ==========================================
+        // Layer 0: Windows用 ベース
+        // ==========================================
         layer_0 {
             bindings = <
 &kp Q      &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)         &kp P                          &kp O           &kp I           &kp U     &kp Y     &kp DEL
@@ -99,6 +69,9 @@
             >;
         };
 
+        // ==========================================
+        // Layer 1: Windows用 ナビゲーション
+        // ==========================================
         layer_1 {
             bindings = <
 &kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp LG(TAB)           &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
@@ -108,6 +81,9 @@
             >;
         };
 
+        // ==========================================
+        // Layer 2: Windows用 記号
+        // ==========================================
         layer_2 {
             bindings = <
 &kp EXCLAMATION  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp JP_AMPERSAND  &kp JP_PIPE  &kp JP_TILDE                   &kp JP_RPAREN     &kp JP_LPAREN  &kp JP_DQUOTE     &kp JP_QUOTE     &kp DEL
@@ -118,7 +94,7 @@
         };
 
         // ==========================================
-        // Layer 3: 拡張機能 1 (旧Layer 4)
+        // Layer 3: 拡張機能 1
         // ==========================================
         layer_3 {
             bindings = <
@@ -130,7 +106,7 @@
         };
 
         // ==========================================
-        // Layer 4: 拡張機能 2 (旧Layer 5)
+        // Layer 4: 拡張機能 2
         // ==========================================
         layer_4 {
             bindings = <
@@ -142,7 +118,7 @@
         };
 
         // ==========================================
-        // Layer 5: 拡張機能 3 (旧Layer 6)
+        // Layer 5: 拡張機能 3
         // ==========================================
         layer_5 {
             bindings = <
@@ -154,7 +130,7 @@
         };
 
         // ==========================================
-        // Layer 6: iPadOS用 ベース (旧Layer 7)
+        // Layer 6: iPadOS用 ベース
         // ==========================================
         layer_6 {
             bindings = <
@@ -166,7 +142,7 @@
         };
 
         // ==========================================
-        // Layer 7: iPadOS用 ナビゲーション (旧Layer 8)
+        // Layer 7: iPadOS用 ナビゲーション
         // ==========================================
         layer_7 {
             bindings = <
@@ -178,7 +154,7 @@
         };
 
         // ==========================================
-        // Layer 8: iPadOS用 記号 (旧Layer 9)
+        // Layer 8: iPadOS用 記号
         // ==========================================
         layer_8 {
             bindings = <
@@ -190,14 +166,14 @@
         };
 
         // ==========================================
-        // Layer 9: システム・Bluetooth切り替え (最上位)
+        // Layer 9: システム・Bluetooth切り替え
         // ==========================================
         layer_9 {
             bindings = <
-&kp LS(TAB)  &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &none        &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
-&kp TAB      &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &bt BT_CLR   &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
-&sel_win_0   &sel_win_1    &sel_win_2    &sel_ipad_3    &sel_ipad_4  &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
-&none                                                   &none        &none  &none                          &none                &none     &none               &none  &trans
+&to 0         &to 6         &none         &none         &bt BT_CLR_ALL  &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
+&kp TAB       &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT) &bt BT_CLR      &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
+&none                                                   &none           &none  &none                          &none                &none     &none               &none  &trans
             >;
         };
     };
