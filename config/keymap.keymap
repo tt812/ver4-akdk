@@ -29,7 +29,37 @@
 
 / {
     macros {
-        // 将来的にiPadでGlobeキー代わり(CAPS)として使うためのマクロ
+        // Bluetooth選択と同時にOSレイヤーへ移動するマクロ（200msの待機で通信エラーを防止）
+        sel_win_0: sel_win_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 200>, <&to 0>;
+        };
+
+        sel_win_1: sel_win_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1>, <&macro_wait_time 200>, <&to 0>;
+        };
+
+        sel_win_2: sel_win_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2>, <&macro_wait_time 200>, <&to 0>;
+        };
+
+        sel_ipad_3: sel_ipad_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3>, <&macro_wait_time 200>, <&to 6>;
+        };
+
+        sel_ipad_4: sel_ipad_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 4>, <&macro_wait_time 200>, <&to 6>;
+        };
+
         splitview_l: splitview_l {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -65,7 +95,7 @@
 &kp Q      &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)         &kp P                          &kp O           &kp I           &kp U     &kp Y     &kp DEL
 &kp A      &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS       &mt LEFT_SHIFT ENTER           &kp L           &kp K           &kp J     &kp H
 &kp Z      &kp X  &kp C  &kp V  &kp B        &mt LEFT_WIN LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp PERIOD      &kp COMMA       &kp M     &kp N
-&kp LCTRL                       &lt 1 SPACE  &lt 2 INT5          &mt RCTRL ESC                  &mt RALT LG(S)  &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 9 BACKSPACE
+&kp LCTRL                       &lt 1 SPACE  &lt 2 INT5          &mt RCTRL ESC                  &mt RALT LG(S)  &mt RWIN JP_AT  &mkp MB2  &lt_mouse 4 MB1  &lt 9 BACKSPACE
             >;
         };
 
@@ -75,7 +105,7 @@
         layer_1 {
             bindings = <
 &kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp LG(TAB)           &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
-&lt 3 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp PAGE_DOWN  &mt LALT CAPS         &mt LEFT_SHIFT ENTER           &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
+&lt 5 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp PAGE_DOWN  &mt LALT CAPS         &mt LEFT_SHIFT ENTER           &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
 &kp LC(Z)    &kp LC(X)        &kp LC(C)  &kp LC(V)    &kp LC(Y)      &mt LEFT_WIN LG(TAB)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
 &kp LCTRL                                             &none          &kp INT5              &mt RCTRL ESC                  &kp KP_PLUS      &kp JP_EQUAL     &kp KP_DOT       &kp KP_NUMBER_0  &kp BACKSPACE
             >;
@@ -94,38 +124,38 @@
         };
 
         // ==========================================
-        // Layer 3: 拡張機能 1
+        // Layer 3: 予備 (レイヤー番号ズレ防止用)
         // ==========================================
         layer_3 {
             bindings = <
-&trans  &trans          &msc SCRL_UP    &trans           &kp HOME  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp END   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans          &trans           &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans                                                   &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans                          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         // ==========================================
-        // Layer 4: 拡張機能 2
+        // Layer 4: マウス機能 (lt_mouse および トラックボール用)
         // ==========================================
         layer_4 {
             bindings = <
 &trans         &trans  &trans    &trans    &trans  &trans  &trans           &trans  &trans    &trans    &trans    &trans
-&kp LC(LS(B))  &mo 5   &mkp MB1  &mkp MB2  &trans  &trans  &mt LSHFT ENTER  &mo 5   &mkp MB1  &mkp MB2  &trans
+&kp LC(LS(B))  &trans  &mkp MB1  &mkp MB2  &trans  &trans  &mt LSHFT ENTER  &trans  &mkp MB1  &mkp MB2  &trans
 &trans         &trans  &trans    &trans    &trans  &trans  &trans           &trans  &trans    &trans    &trans
 &kp LCTRL                                  &trans  &trans  &trans           &trans  &trans    &mkp MB2  &mkp MB1  &trans
             >;
         };
 
         // ==========================================
-        // Layer 5: 拡張機能 3
+        // Layer 5: スクロール機能 (TAB長押し または トラックボール用)
         // ==========================================
         layer_5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans                          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &msc SCRL_UP    &trans           &kp HOME  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp END   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans          &trans           &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans                                                   &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -137,7 +167,7 @@
 &kp Q      &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)         &kp P                          &kp O           &kp I           &kp U     &kp Y     &kp DEL
 &kp A      &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS       &mt LEFT_SHIFT ENTER           &kp L           &kp K           &kp J     &kp H
 &kp Z      &kp X  &kp C  &kp V  &kp B        &mt LEFT_WIN LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp PERIOD      &kp COMMA       &kp M     &kp N
-&kp LCTRL                       &lt 7 SPACE  &lt 8 INT5          &mt RCTRL ESC                  &mt RALT LG(S)  &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 9 BACKSPACE
+&kp LCTRL                       &lt 7 SPACE  &lt 8 INT5          &mt RCTRL ESC                  &mt RALT LG(S)  &mt RWIN JP_AT  &mkp MB2  &lt_mouse 4 MB1  &lt 9 BACKSPACE
             >;
         };
 
@@ -147,7 +177,7 @@
         layer_7 {
             bindings = <
 &kp LS(TAB)  &kp LS(LG(TAB))  &kp UP     &kp LG(TAB)  &kp PAGE_UP    &kp LG(TAB)           &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
-&lt 3 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp PAGE_DOWN  &mt LALT CAPS         &mt LEFT_SHIFT ENTER           &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
+&lt 5 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp PAGE_DOWN  &mt LALT CAPS         &mt LEFT_SHIFT ENTER           &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
 &kp LG(Z)    &kp LG(X)        &kp LG(C)  &kp LG(V)    &kp LS(LG(Z))  &mt LEFT_WIN LG(TAB)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
 &kp LCTRL                                             &none          &kp INT5              &mt RCTRL ESC                  &kp KP_PLUS      &kp JP_EQUAL     &kp KP_DOT       &kp KP_NUMBER_0  &kp BACKSPACE
             >;
@@ -166,13 +196,13 @@
         };
 
         // ==========================================
-        // Layer 9: システム・Bluetooth切り替え
+        // Layer 9: システム・Bluetooth切り替え (最優先)
         // ==========================================
         layer_9 {
             bindings = <
-&to 0         &to 6         &none         &none         &bt BT_CLR_ALL  &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
-&kp TAB       &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT) &bt BT_CLR      &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
+&kp LS(TAB)  &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &bt BT_CLR_ALL  &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
+&kp TAB      &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &bt BT_CLR      &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
+&sel_win_0   &sel_win_1    &sel_win_2    &sel_ipad_3    &sel_ipad_4     &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
 &none                                                   &none           &none  &none                          &none                &none     &none               &none  &trans
             >;
         };
