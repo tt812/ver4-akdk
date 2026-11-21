@@ -67,13 +67,13 @@
          /* normal cursor movement + auto mouse layer (layer 5) */
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_temp_layer 5 400
+            &zip_temp_layer 4 400
             &zip_xy_scaler 4 7
         >;
 
         /* scroll mode when layer 6 is active */
         scroller {
-            layers = <6>;
+            layers = <5>;
 
             input-processors = <
                 &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
