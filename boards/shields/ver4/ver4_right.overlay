@@ -14,11 +14,11 @@
         rows = <4>;
         map = <
             RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
-            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10)
-            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10)
-            RC(3,0) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11)
+			RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10)
+			RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10)
+			RC(3,0) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11)
         >;
-        col-offset = <6>;
+		col-offset = <6>;
     };
 
     kscan0: kscan {
@@ -28,17 +28,17 @@
         diode-direction = "col2row";
         row-gpios
             = <&akdk_d 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&akdk_d 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&akdk_d 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&akdk_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			,<&akdk_d 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			,<&akdk_d 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			,<&akdk_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
         col-gpios
             = <&akdk_d 3 GPIO_ACTIVE_HIGH>
-            ,<&akdk_d 4 GPIO_ACTIVE_HIGH>
-            ,<&akdk_d 5 GPIO_ACTIVE_HIGH>
-            ,<&akdk_d 6 GPIO_ACTIVE_HIGH>
-            ,<&akdk_d 12 GPIO_ACTIVE_HIGH>
-            ,<&akdk_d 13 GPIO_ACTIVE_HIGH>
+			,<&akdk_d 4 GPIO_ACTIVE_HIGH>
+			,<&akdk_d 5 GPIO_ACTIVE_HIGH>
+			,<&akdk_d 6 GPIO_ACTIVE_HIGH>
+			,<&akdk_d 12 GPIO_ACTIVE_HIGH>
+			,<&akdk_d 13 GPIO_ACTIVE_HIGH>
             ;
     };
 
@@ -47,6 +47,7 @@
         device = <&trackpoint>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
     };
+
 
     split_inputs {
         #address-cells = <1>;
@@ -63,16 +64,16 @@
         device = <&trackball_split>;
         status = "okay";
 
-         /* ボールを動かすとLayer 4（マウスレイヤー）に自動切り替え */
+         /* normal cursor movement + auto mouse layer (layer 5) */
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_temp_layer 4 400
+            &zip_temp_layer 5 400
             &zip_xy_scaler 4 7
         >;
 
-        /* Layer 5（スクロールレイヤー）がアクティブな時だけスクロール動作に切り替え */
+        /* scroll mode when layer 6 is active */
         scroller {
-            layers = <5>;
+            layers = <6>;
 
             input-processors = <
                 &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
@@ -89,24 +90,24 @@
     transform = <&default_transform>;
 };
 
-&pinctrl {
+  &pinctrl {
     i2c0_default: i2c0_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 12)>,
-                <NRF_PSEL(TWIM_SCL, 1, 9)>;
-        };
+      group1 {
+        psels = <NRF_PSEL(TWIM_SDA, 0, 12)>,
+            <NRF_PSEL(TWIM_SCL, 1, 9)>;
+      };
     };
 
     i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 12)>,
-                <NRF_PSEL(TWIM_SCL, 1, 9)>;
-            low-power-enable;
-        };
+      group1 {
+        psels = <NRF_PSEL(TWIM_SDA, 0, 12)>,
+            <NRF_PSEL(TWIM_SCL, 1, 9)>;
+        low-power-enable;
+      };
     };
-};
+  };
 
-&i2c0 {
+  &i2c0 {
     status = "okay";
     compatible = "nordic,nrf-twim";
     pinctrl-0 = <&i2c0_default>;
@@ -116,11 +117,11 @@
     zephyr,concat-buf-size = <32>;
 
     trackpoint: trackpoint@57 {
-        status = "okay";
-        compatible = "lpps";
-        reg = <0x57>;
-        irq-gpios = <&gpio0 13 GPIO_PULL_UP>;
+      status = "okay";
+      compatible = "lpps";
+      reg = <0x57>;
+      irq-gpios = <&gpio0 13 GPIO_PULL_UP>;
     };
-};
+  };
 
   
