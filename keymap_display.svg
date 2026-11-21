@@ -1859,26 +1859,27 @@ path.combo {
 <g transform="translate(0, 56)">
 <g transform="translate(28, 63)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Sft+TAB</text>
+<a href="#x_x">
+<text x="0" y="0" class="key tap layer-activator">0</text>
+</a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(86, 35)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Alt+</tspan><tspan x="0" dy="1.2em">LEFT</tspan>
-</text>
+<a href="#x_x">
+<text x="0" y="0" class="key tap layer-activator">6</text>
+</a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(144, 28)" class="key keypos-2">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Gui+UP</text>
 </g>
 <g transform="translate(201, 42)" class="key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Alt+</tspan><tspan x="0" dy="1.2em">RIGHT</tspan>
-</text>
 </g>
 <g transform="translate(259, 56)" class="key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">BT</tspan><tspan x="0" dy="1.2em">CLR</tspan><tspan x="0" dy="1.2em">ALL</tspan>
+</text>
 </g>
 <g transform="translate(317, 60)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1962,23 +1963,27 @@ path.combo {
 </g>
 <g transform="translate(28, 175)" class="key keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 70%">&amp;sel_win_0</tspan></text>
+<text x="0" y="0" class="key tap">Win/BT0</text>
 </g>
 <g transform="translate(86, 147)" class="key keypos-24">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 70%">&amp;sel_win_1</tspan></text>
+<text x="0" y="0" class="key tap">Win/BT1</text>
 </g>
 <g transform="translate(144, 140)" class="key keypos-25">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 70%">&amp;sel_win_2</tspan></text>
+<text x="0" y="0" class="key tap">Win/BT2</text>
 </g>
 <g transform="translate(201, 154)" class="key keypos-26">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;sel_ipad_3</tspan></text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">iPad/</tspan><tspan x="0" dy="1.2em">BT3</tspan>
+</text>
 </g>
 <g transform="translate(259, 168)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;sel_ipad_4</tspan></text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">iPad/</tspan><tspan x="0" dy="1.2em">BT4</tspan>
+</text>
 </g>
 <g transform="translate(317, 172)" class="key keypos-28">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
