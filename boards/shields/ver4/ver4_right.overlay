@@ -45,10 +45,7 @@
     trackpoint_listener: trackpoint_listener {
         compatible = "zmk,input-listener";
         device = <&trackpoint>;
-        input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 1 2
-        >;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
     };
 
 
@@ -115,7 +112,7 @@
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
+    clock-frequency = <I2C_BITRATE_FAST>;
     zephyr,concat-buf-size = <32>;
 
     trackpoint: trackpoint@57 {
