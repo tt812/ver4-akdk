@@ -280,7 +280,7 @@
         layer_10 {
             bindings = <
 &kp LS(TAB)  &kp LA(LEFT)  &iPad_Window  &kp LA(RIGHT)  &splitview_l  &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
-&kp TAB      &kp LG(LEFT)  &iPad_Window  &kp LG(RIGHT)  &bt BT_CLR    &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
+&kp TAB      &iPad_LSplit  &iPad_Window  &iPad_RSplit   &bt BT_CLR    &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
 &sel_win_0   &sel_win_1    &sel_win_2    &sel_ipad_3    &sel_ipad_4   &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
 &none                                                   &none         &none  &none                          &none                &none     &none               &none  &none
             >;
