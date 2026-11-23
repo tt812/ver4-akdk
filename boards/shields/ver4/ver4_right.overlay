@@ -58,7 +58,7 @@
                 &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
                 &zip_xy_to_scroll_mapper
                 &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)
-                &zip_scroll_scaler 2 10
+                &zip_scroll_scaler 1 10
             >;
         };
     };
