@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: my-fork
+      url-base: https://github.com/tt812/zmk-driver-lpps
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -13,6 +15,7 @@ manifest:
       remote: sekigon-gonnoc
       revision: main
     - name: zmk-driver-lpps
-      remote: sekigon-gonnoc
+      remote: my-fork
+      revision: master
   self:
     path: config
