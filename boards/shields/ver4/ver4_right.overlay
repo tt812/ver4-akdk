@@ -49,6 +49,18 @@
             &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
             &zip_temp_layer 5 400
         >;
+
+        /* scroll mode when layer 6 is active */
+        scroller {
+            layers = <6>;
+
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)
+                &zip_scroll_scaler 2 10
+            >;
+        };
     };
 
 
