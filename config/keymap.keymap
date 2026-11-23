@@ -246,10 +246,10 @@
 
         layer_7 {
             bindings = <
-&kp Q             &kp W  &kp E  &kp R  &kp T        &app_switch           &kp P                          &kp O                 &kp I           &kp U     &kp Y     &kp DEL
-&kp A             &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS         &mt LEFT_SHIFT ENTER           &kp L                 &kp K           &kp J     &kp H
-&kp Z             &kp X  &kp C  &kp V  &kp B        &mt (LEFT_WIN) LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp PERIOD            &kp COMMA       &kp M     &kp N
-&kp LEFT_COMMAND                       &lt 8 SPACE  &lt 9 INT5            &mt RCTRL ESC                  &mt (RALT) LG(SPACE)  &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 10 BACKSPACE
+&kp Q             &kp W  &kp E  &kp R  &kp T        &app_switch    &kp P                          &kp O                 &kp I           &kp U     &kp Y     &kp DEL
+&kp A             &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS  &mt LEFT_SHIFT ENTER           &kp L                 &kp K           &kp J     &kp H
+&kp Z             &kp X  &kp C  &kp V  &kp B        &kp CAPS       &mt RIGHT_SHIFT JP_UNDERSCORE  &kp PERIOD            &kp COMMA       &kp M     &kp N
+&kp LEFT_COMMAND                       &lt 8 SPACE  &lt 9 INT5     &mt RCTRL ESC                  &mt (RALT) LG(SPACE)  &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 10 BACKSPACE
             >;
         };
 
@@ -257,10 +257,10 @@
 
         layer_8 {
             bindings = <
-&kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp LG(TAB)             &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
-&lt 4 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp PAGE_DOWN  &mt LALT CAPS           &mt LEFT_SHIFT ENTER           &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
-&kp LG(Z)    &kp LG(X)        &kp LG(C)  &kp LG(V)    &kp LS(LG(Z))  &mt (LEFT_WIN) LG(TAB)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
-&kp LGUI                                              &none          &kp INT5                &mt RCTRL ESC                  &kp KP_PLUS      &kp JP_EQUAL     &kp KP_DOT       &kp KP_NUMBER_0  &kp BACKSPACE
+&kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp LG(TAB)    &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
+&lt 4 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp PAGE_DOWN  &mt LALT CAPS  &mt LEFT_SHIFT ENTER           &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
+&kp LG(Z)    &kp LG(X)        &kp LG(C)  &kp LG(V)    &kp LS(LG(Z))  &kp CAPS       &mt RIGHT_SHIFT JP_UNDERSCORE  &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
+&kp LGUI                                              &none          &kp INT5       &mt RCTRL ESC                  &kp KP_PLUS      &kp JP_EQUAL     &kp KP_DOT       &kp KP_NUMBER_0  &kp BACKSPACE
             >;
         };
 
@@ -279,10 +279,10 @@
 
         layer_10 {
             bindings = <
-&kp LS(TAB)  &kp LA(LEFT)  &iPad_Window      &kp LA(RIGHT)  &splitview_l  &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
-&kp TAB      &iPad_LSplit  &iPad_FullScreen  &iPad_RSplit   &bt BT_CLR    &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
-&sel_win_0   &sel_win_1    &sel_win_2        &sel_ipad_3    &sel_ipad_4   &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
-&none                                                       &none         &none  &none                          &none                &none     &none               &none  &none
+&kp LS(TAB)  &kp LA(LEFT)  &iPad_Window      &kp LA(RIGHT)  &none        &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
+&kp TAB      &iPad_LSplit  &iPad_FullScreen  &iPad_RSplit   &bt BT_CLR   &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
+&sel_win_0   &sel_win_1    &sel_win_2        &sel_ipad_3    &sel_ipad_4  &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
+&none                                                       &none        &none  &none                          &none                &none     &none               &none  &none
             >;
         };
 
