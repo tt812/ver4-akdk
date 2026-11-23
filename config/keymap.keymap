@@ -78,10 +78,25 @@
 
             label = "SPLITVIEW_L";
         };
+
+        app_switch: app_switch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp CAPS>,
+                <&macro_tap>,
+                <&kp UP>,
+                <&macro_release>,
+                <&kp CAPS>;
+
+            label = "APP_SWITCH";
+        };
     };
 
     behaviors {
         // タップでマウスボタン、長押しでレイヤー移動するカスタム設定
+
         lt_mouse: lt_mouse {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -95,6 +110,7 @@
         compatible = "zmk,keymap";
 
         /* Layer 0: Windows Base */
+
         layer_0 {
             bindings = <
 &kp Q      &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)           &kp P                          &kp O             &kp I           &kp U     &kp Y     &kp DEL
@@ -105,6 +121,7 @@
         };
 
         /* Layer 1: Windows Nav / Numpad */
+
         layer_1 {
             bindings = <
 &kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp LG(TAB)             &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
@@ -115,6 +132,7 @@
         };
 
         /* Layer 2: Windows Symbols / Fn */
+
         layer_2 {
             bindings = <
 &kp EXCLAMATION  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp JP_AMPERSAND  &kp JP_PIPE  &kp JP_TILDE                   &kp JP_RPAREN     &kp JP_LPAREN  &kp JP_DQUOTE     &kp JP_QUOTE     &kp DEL
@@ -125,6 +143,7 @@
         };
 
         /* Layer 3: Windows System / BT */
+
         layer_3 {
             bindings = <
 &kp LS(TAB)  &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &none        &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
@@ -135,6 +154,7 @@
         };
 
         /* Layer 4: Scroll keys (from Layer 1) */
+
         layer_4 {
             bindings = <
 &trans  &trans          &msc SCRL_UP    &trans           &kp HOME  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -145,6 +165,7 @@
         };
 
         /* Layer 5: Reserved (Placeholder) */
+
         layer_5 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -155,6 +176,7 @@
         };
 
         /* Layer 6: Reserved (Placeholder) */
+
         layer_6 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -165,16 +187,18 @@
         };
 
         /* Layer 7: iPad Base */
+
         layer_7 {
             bindings = <
-&kp Q     &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)           &kp P                              &kp O             &kp I           &kp U     &kp Y     &kp DEL
-&kp A     &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS         &mt LEFT_SHIFT ENTER               &kp L             &kp K           &kp J     &kp H
-&kp Z     &kp X  &kp C  &kp V  &kp B        &mt (LEFT_WIN) LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE      &kp PERIOD        &kp COMMA       &kp M     &kp N
-&kp LGUI                       &lt 8 SPACE  &lt 9 INT5            &mt RCTRL ESC                      &mt (RALT) LG(SPACE) &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 10 BACKSPACE
+&kp Q     &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)           &kp P                          &kp O                 &kp I           &kp U     &kp Y     &kp DEL
+&kp A     &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS         &mt LEFT_SHIFT ENTER           &kp L                 &kp K           &kp J     &kp H
+&kp Z     &kp X  &kp C  &kp V  &kp B        &mt (LEFT_WIN) LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp PERIOD            &kp COMMA       &kp M     &kp N
+&kp LGUI                       &lt 8 SPACE  &lt 9 INT5            &mt RCTRL ESC                  &mt (RALT) LG(SPACE)  &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 10 BACKSPACE
             >;
         };
 
         /* Layer 8: iPad Nav / Numpad */
+
         layer_8 {
             bindings = <
 &kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp LG(TAB)             &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
@@ -185,6 +209,7 @@
         };
 
         /* Layer 9: iPad Symbols / Fn */
+
         layer_9 {
             bindings = <
 &kp EXCLAMATION  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp JP_AMPERSAND  &kp JP_PIPE  &kp JP_TILDE                   &kp JP_RPAREN     &kp JP_LPAREN  &kp JP_DQUOTE     &kp JP_QUOTE     &kp DEL
@@ -195,6 +220,7 @@
         };
 
         /* Layer 10: iPad System / BT / SplitView */
+
         layer_10 {
             bindings = <
 &kp LS(TAB)  &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &splitview_l  &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
@@ -205,16 +231,18 @@
         };
 
         /* Layer 11: Auto Mouse Layer (Windows & iPad 共通) */
+
         layer_11 {
             bindings = <
-&trans         &trans   &trans    &trans    &trans  &trans  &trans           &trans   &trans    &trans    &trans    &trans
-&kp LC(LS(B))  &mo 12   &mkp MB1  &mkp MB2  &trans  &trans  &mt LSHFT ENTER  &mo 12   &mkp MB1  &mkp MB2  &trans
-&trans         &trans   &trans    &trans    &trans  &trans  &trans           &trans   &trans    &trans    &trans
-&kp LCTRL                                   &trans  &trans  &trans           &trans   &trans    &mkp MB2  &mkp MB1  &trans
+&trans         &trans  &trans    &trans    &trans  &trans  &trans           &trans  &trans    &trans    &trans    &trans
+&kp LC(LS(B))  &mo 12  &mkp MB1  &mkp MB2  &trans  &trans  &mt LSHFT ENTER  &mo 12  &mkp MB1  &mkp MB2  &trans
+&trans         &trans  &trans    &trans    &trans  &trans  &trans           &trans  &trans    &trans    &trans
+&kp LCTRL                                  &trans  &trans  &trans           &trans  &trans    &mkp MB2  &mkp MB1  &trans
             >;
         };
 
         /* Layer 12: Scroll Mode Layer (Windows & iPad 共通) */
+
         layer_12 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -225,6 +253,7 @@
         };
 
         /* Layer 13: Reserved */
+
         layer_13 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -235,6 +264,7 @@
         };
 
         /* Layer 14: Reserved */
+
         layer_14 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -245,6 +275,7 @@
         };
 
         /* Layer 15: Reserved */
+
         layer_15 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
