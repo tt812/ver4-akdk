@@ -93,7 +93,7 @@
             label = "APP_SWITCH";
         };
 
-        iPad_FullScreen: iPad_FullScreen {
+        iPad_Window: iPad_FullScreen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -119,6 +119,34 @@
                 <&kp LC(CAPS)>;
 
             label = "IPAD_FULLSCREEN";
+        };
+
+        iPad_RSplit: iPad_RSplit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LC(CAPS)>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LC(CAPS)>;
+
+            label = "IPAD_RSPLIT";
+        };
+
+        iPad_LSplit: iPad_LSplit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LC(CAPS)>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LC(CAPS)>;
+
+            label = "IPAD_LSPLIT";
         };
     };
 
@@ -251,8 +279,8 @@
 
         layer_10 {
             bindings = <
-&kp LS(TAB)  &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &splitview_l  &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
-&kp TAB      &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &bt BT_CLR    &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
+&kp LS(TAB)  &kp LA(LEFT)  &iPad_Window  &kp LA(RIGHT)  &splitview_l  &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
+&kp TAB      &kp LG(LEFT)  &iPad_Window  &kp LG(RIGHT)  &bt BT_CLR    &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
 &sel_win_0   &sel_win_1    &sel_win_2    &sel_ipad_3    &sel_ipad_4   &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
 &none                                                   &none         &none  &none                          &none                &none     &none               &none  &none
             >;
