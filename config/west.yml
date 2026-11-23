@@ -5,7 +5,7 @@ manifest:
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
     - name: my-fork
-      url-base: https://github.com/tt812/zmk-driver-lpps
+      url-base: https://github.com/tt812
   projects:
     - name: zmk
       remote: zmkfirmware
