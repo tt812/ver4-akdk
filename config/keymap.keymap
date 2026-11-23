@@ -246,10 +246,10 @@
 
         layer_7 {
             bindings = <
-&kp Q     &kp W  &kp E  &kp R  &kp T        &app_switch           &kp P                          &kp O                 &kp I           &kp U     &kp Y     &kp DEL
-&kp A     &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS         &mt LEFT_SHIFT ENTER           &kp L                 &kp K           &kp J     &kp H
-&kp Z     &kp X  &kp C  &kp V  &kp B        &mt (LEFT_WIN) LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp PERIOD            &kp COMMA       &kp M     &kp N
-&kp LGUI                       &lt 8 SPACE  &lt 9 INT5            &mt RCTRL ESC                  &mt (RALT) LG(SPACE)  &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 10 BACKSPACE
+&kp Q             &kp W  &kp E  &kp R  &kp T        &app_switch           &kp P                          &kp O                 &kp I           &kp U     &kp Y     &kp DEL
+&kp A             &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS         &mt LEFT_SHIFT ENTER           &kp L                 &kp K           &kp J     &kp H
+&kp Z             &kp X  &kp C  &kp V  &kp B        &mt (LEFT_WIN) LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp PERIOD            &kp COMMA       &kp M     &kp N
+&kp LEFT_COMMAND                       &lt 8 SPACE  &lt 9 INT5            &mt RCTRL ESC                  &mt (RALT) LG(SPACE)  &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 10 BACKSPACE
             >;
         };
 
