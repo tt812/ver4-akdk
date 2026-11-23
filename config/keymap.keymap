@@ -92,6 +92,20 @@
 
             label = "APP_SWITCH";
         };
+
+        iPad_FullScreen: iPad_FullScreen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LC(CAPS)>,
+                <&macro_tap>,
+                <&kp UP>,
+                <&macro_release>,
+                <&kp CAPS>;
+
+            label = "IPAD_FULLSCREEN";
+        };
     };
 
     behaviors {
