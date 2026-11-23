@@ -102,7 +102,21 @@
                 <&macro_tap>,
                 <&kp UP>,
                 <&macro_release>,
-                <&kp CAPS>;
+                <&kp LC(CAPS)>;
+
+            label = "IPAD_FULLSCREEN";
+        };
+
+        iPad_FullScreen: iPad_FullScreen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LC(CAPS)>,
+                <&macro_tap>,
+                <&kp DOWN>,
+                <&macro_release>,
+                <&kp LC(CAPS)>;
 
             label = "IPAD_FULLSCREEN";
         };
