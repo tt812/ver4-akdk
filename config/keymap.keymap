@@ -78,26 +78,23 @@
 
             label = "SPLITVIEW_L";
         };
+    };
 
-        //
-    }; //
     behaviors {
         // タップでマウスボタン、長押しでレイヤー移動するカスタム設定
-
         lt_mouse: lt_mouse {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";    // タップ操作を優先する設定
             tapping-term-ms = <200>;     // 200ミリ秒以上の長押しでレイヤー切り替え
             bindings = <&mo>, <&mkp>;
-
-            // 1つ目の引数にレイヤー(&mo)、2つ目にマウスボタン(&mkp)
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
+        /* Layer 0: Windows Base */
         layer_0 {
             bindings = <
 &kp Q      &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)           &kp P                          &kp O             &kp I           &kp U     &kp Y     &kp DEL
@@ -107,6 +104,7 @@
             >;
         };
 
+        /* Layer 1: Windows Nav / Numpad */
         layer_1 {
             bindings = <
 &kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp LG(TAB)             &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
@@ -116,6 +114,7 @@
             >;
         };
 
+        /* Layer 2: Windows Symbols / Fn */
         layer_2 {
             bindings = <
 &kp EXCLAMATION  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp JP_AMPERSAND  &kp JP_PIPE  &kp JP_TILDE                   &kp JP_RPAREN     &kp JP_LPAREN  &kp JP_DQUOTE     &kp JP_QUOTE     &kp DEL
@@ -125,15 +124,17 @@
             >;
         };
 
+        /* Layer 3: Windows System / BT */
         layer_3 {
             bindings = <
-&kp LS(TAB)   &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &none         &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
-&kp TAB       &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &bt BT_CLR    &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4  &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
-&none                                                    &none         &none  &none                          &none                &none     &none               &none  &none
+&kp LS(TAB)  &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &none        &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
+&kp TAB      &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &bt BT_CLR   &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
+&sel_win_0   &sel_win_1    &sel_win_2    &sel_ipad_3    &sel_ipad_4  &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
+&none                                                   &none        &none  &none                          &none                &none     &none               &none  &none
             >;
         };
 
+        /* Layer 4: Scroll keys (from Layer 1) */
         layer_4 {
             bindings = <
 &trans  &trans          &msc SCRL_UP    &trans           &kp HOME  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -143,15 +144,17 @@
             >;
         };
 
+        /* Layer 5: Reserved (Placeholder) */
         layer_5 {
             bindings = <
-&trans         &trans  &trans    &trans    &trans  &trans  &trans           &trans  &trans    &trans    &trans    &trans
-&kp LC(LS(B))  &mo 6   &mkp MB1  &mkp MB2  &trans  &trans  &mt LSHFT ENTER  &mo 6   &mkp MB1  &mkp MB2  &trans
-&trans         &trans  &trans    &trans    &trans  &trans  &trans           &trans  &trans    &trans    &trans
-&kp LCTRL                                  &trans  &trans  &trans           &trans  &trans    &mkp MB2  &mkp MB1  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans                          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
+        /* Layer 6: Reserved (Placeholder) */
         layer_6 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -161,51 +164,57 @@
             >;
         };
 
+        /* Layer 7: iPad Base */
         layer_7 {
             bindings = <
-&kp Q      &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)           &kp P                          &kp O             &kp I           &kp U     &kp Y     &kp DEL
-&kp A      &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS         &mt LEFT_SHIFT ENTER           &kp L             &kp K           &kp J     &kp H
-&kp Z      &kp X  &kp C  &kp V  &kp B        &mt (LEFT_WIN) LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp PERIOD        &kp COMMA       &kp M     &kp N
-&kp LCTRL                       &lt 1 SPACE  &lt 2 INT5            &mt RCTRL ESC                  &mt (RALT) LG(S)  &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 3 BACKSPACE
+&kp Q     &kp W  &kp E  &kp R  &kp T        &kp LG(TAB)           &kp P                              &kp O             &kp I           &kp U     &kp Y     &kp DEL
+&kp A     &kp S  &kp D  &kp F  &kp G        &mt LALT CAPS         &mt LEFT_SHIFT ENTER               &kp L             &kp K           &kp J     &kp H
+&kp Z     &kp X  &kp C  &kp V  &kp B        &mt (LEFT_WIN) LG(T)  &mt RIGHT_SHIFT JP_UNDERSCORE      &kp PERIOD        &kp COMMA       &kp M     &kp N
+&kp LGUI                       &lt 8 SPACE  &lt 9 INT5            &mt RCTRL ESC                      &mt (RALT) LG(SPACE) &mt RWIN JP_AT  &mkp MB2  &mkp MB1  &lt 10 BACKSPACE
             >;
         };
 
+        /* Layer 8: iPad Nav / Numpad */
         layer_8 {
             bindings = <
 &kp LS(TAB)  &kp LS(LC(TAB))  &kp UP     &kp LC(TAB)  &kp PAGE_UP    &kp LG(TAB)             &kp MINUS                      &kp KP_SLASH     &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp DEL
 &lt 4 TAB    &kp LEFT         &kp DOWN   &kp RIGHT    &kp PAGE_DOWN  &mt LALT CAPS           &mt LEFT_SHIFT ENTER           &kp KP_MULTIPLY  &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4
-&kp LC(Z)    &kp LC(X)        &kp LC(C)  &kp LC(V)    &kp LC(Y)      &mt (LEFT_WIN) LG(TAB)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
-&kp LCTRL                                             &none          &kp INT5                &mt RCTRL ESC                  &kp KP_PLUS      &kp JP_EQUAL     &kp KP_DOT       &kp KP_NUMBER_0  &kp BACKSPACE
+&kp LG(Z)    &kp LG(X)        &kp LG(C)  &kp LG(V)    &kp LS(LG(Z))  &mt (LEFT_WIN) LG(TAB)  &mt RIGHT_SHIFT JP_UNDERSCORE  &kp KP_MINUS     &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1
+&kp LGUI                                              &none          &kp INT5                &mt RCTRL ESC                  &kp KP_PLUS      &kp JP_EQUAL     &kp KP_DOT       &kp KP_NUMBER_0  &kp BACKSPACE
             >;
         };
 
+        /* Layer 9: iPad Symbols / Fn */
         layer_9 {
             bindings = <
 &kp EXCLAMATION  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp JP_AMPERSAND  &kp JP_PIPE  &kp JP_TILDE                   &kp JP_RPAREN     &kp JP_LPAREN  &kp JP_DQUOTE     &kp JP_QUOTE     &kp DEL
 &kp F7           &kp F8    &kp F9      &kp F10      &kp F11           &kp F12      &mt LEFT_SHIFT ENTER           &kp SINGLE_QUOTE  &kp SEMICOLON  &kp JP_RBRACKET   &kp JP_LBRACKET
 &kp F1           &kp F2    &kp F3      &kp F4       &kp F5            &kp F6       &mt RIGHT_SHIFT JP_UNDERSCORE  &kp JP_YEN        &kp SLASH      &kp GREATER_THAN  &kp LESS_THAN
-&kp LCTRL                                           &none             &none        &mt RCTRL ESC                  &none             &none          &none             &none            &kp BACKSPACE
+&kp LGUI                                            &none             &none        &mt RCTRL ESC                  &none             &none          &none             &none            &kp BACKSPACE
             >;
         };
 
+        /* Layer 10: iPad System / BT / SplitView */
         layer_10 {
             bindings = <
-&kp LS(TAB)   &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &none         &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
-&kp TAB       &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &bt BT_CLR    &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4  &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
-&none                                                    &none         &none  &none                          &none                &none     &none               &none  &none
+&kp LS(TAB)  &kp LA(LEFT)  &kp LG(UP)    &kp LA(RIGHT)  &splitview_l  &none  &none                          &kp RA(RIGHT_ARROW)  &kp UP    &kp RA(LEFT_ARROW)  &none  &none
+&kp TAB      &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &bt BT_CLR    &none  &mt LEFT_SHIFT ENTER           &kp RIGHT            &kp DOWN  &kp LEFT            &none
+&sel_win_0   &sel_win_1    &sel_win_2    &sel_ipad_3    &sel_ipad_4   &none  &mt RIGHT_SHIFT JP_UNDERSCORE  &none                &none     &none               &none
+&none                                                   &none         &none  &none                          &none                &none     &none               &none  &none
             >;
         };
 
+        /* Layer 11: Auto Mouse Layer (Windows & iPad 共通) */
         layer_11 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans                          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans   &trans    &trans    &trans  &trans  &trans           &trans   &trans    &trans    &trans    &trans
+&kp LC(LS(B))  &mo 12   &mkp MB1  &mkp MB2  &trans  &trans  &mt LSHFT ENTER  &mo 12   &mkp MB1  &mkp MB2  &trans
+&trans         &trans   &trans    &trans    &trans  &trans  &trans           &trans   &trans    &trans    &trans
+&kp LCTRL                                   &trans  &trans  &trans           &trans   &trans    &mkp MB2  &mkp MB1  &trans
             >;
         };
 
+        /* Layer 12: Scroll Mode Layer (Windows & iPad 共通) */
         layer_12 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -215,6 +224,7 @@
             >;
         };
 
+        /* Layer 13: Reserved */
         layer_13 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -224,6 +234,7 @@
             >;
         };
 
+        /* Layer 14: Reserved */
         layer_14 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -233,6 +244,7 @@
             >;
         };
 
+        /* Layer 15: Reserved */
         layer_15 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
