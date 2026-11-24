@@ -126,11 +126,15 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LC(CAPS)>,
+                <&kp LEFT_CONTROL>,
+                <&macro_press>,
+                <&kp CAPS>,
                 <&macro_tap>,
                 <&kp RIGHT>,
                 <&macro_release>,
-                <&kp LC(CAPS)>;
+                <&kp CAPS>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
 
             label = "IPAD_RSPLIT";
         };
@@ -140,11 +144,15 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LC(CAPS)>,
+                <&kp LEFT_CONTROL>,
+                <&macro_press>,
+                <&kp CAPS>,
                 <&macro_tap>,
                 <&kp LEFT>,
                 <&macro_release>,
-                <&kp LC(CAPS)>;
+                <&kp CAPS>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
 
             label = "IPAD_LSPLIT";
         };
