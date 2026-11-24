@@ -126,15 +126,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_CONTROL>,
-                <&macro_press>,
-                <&kp CAPS>,
+                <&kp LEFT_CONTROL &kp CAPS>,
                 <&macro_tap>,
                 <&kp RIGHT>,
                 <&macro_release>,
-                <&kp CAPS>,
-                <&macro_release>,
-                <&kp LEFT_CONTROL>;
+                <&kp LEFT_CONTROL &kp CAPS>;
 
             label = "IPAD_RSPLIT";
         };
@@ -144,15 +140,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_CONTROL>,
-                <&macro_press>,
-                <&kp CAPS>,
+                <&kp LEFT_CONTROL &kp CAPS>,
                 <&macro_tap>,
                 <&kp LEFT>,
                 <&macro_release>,
-                <&kp CAPS>,
-                <&macro_release>,
-                <&kp LEFT_CONTROL>;
+                <&kp LEFT_CONTROL &kp CAPS>;
 
             label = "IPAD_LSPLIT";
         };
